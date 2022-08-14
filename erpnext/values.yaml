@@ -11,8 +11,8 @@
 nginx:
   replicaCount: 1
   image:
-    repository: frappe/erpnext-nginx
-    tag: v14.0.0
+    repository: naderelabed/erpnext-nginx
+    tag: v13.36.3
     pullPolicy: IfNotPresent
   # config: |
   #   # custom template /etc/nginx/templates/default.conf.template
@@ -45,8 +45,8 @@ nginx:
 
 worker:
   image:
-    repository: frappe/erpnext-worker
-    tag: v14.0.0
+    repository: naderelabed/erpnext-worker
+    tag: v13.36.3
     pullPolicy: IfNotPresent
 
   gunicorn:
@@ -202,8 +202,8 @@ socketio:
     initialDelaySeconds: 5
     periodSeconds: 10
   image:
-    repository: frappe/frappe-socketio
-    tag: v14.1.0
+    repository: naderelabed/frappe-socketio
+    tag: v13.37.0
     pullPolicy: IfNotPresent
   resources: {}
   nodeSelector: {}
@@ -221,13 +221,13 @@ persistence:
     enabled: true
     # existingClaim: ""
     size: 8Gi
-    # storageClass: "nfs"
+    storageClass: "nfs"
   logs:
     # Container based log search and analytics stack recommended
     enabled: false
     # existingClaim: ""
     size: 8Gi
-    # storageClass: "nfs"
+    storageClass: "nfs"
 
 # Ingress
 ingress:
